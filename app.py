@@ -1,6 +1,11 @@
-zip_path = "india_housing_prices (1).zip"
-with zipfile.ZipFile(zip_path) as z:
-    with z.open(z.namelist()[0]) as f:
+import zipfile
+import pandas as pd
+
+zip_path = "data.zip"   # आपकी zip file का नाम
+
+with zipfile.ZipFile(zip_path, 'r') as z:
+    csv_file = z.namelist()[0]  # ZIP के अंदर पहली CSV फाइल
+    with z.open(csv_file) as f:
         df = pd.read_csv(f)
 
 
