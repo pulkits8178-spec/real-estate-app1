@@ -1,3 +1,10 @@
+zip_path = "india_housing_prices (1).zip"
+with zipfile.ZipFile(zip_path) as z:
+    with z.open(z.namelist()[0]) as f:
+        df = pd.read_csv(f)
+
+
+
 # app.py
 
 import streamlit as st
