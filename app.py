@@ -2,6 +2,22 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
+# -------------------------------------------
+# LOAD MERGED DATASET FROM MULTIPLE CSV FILES
+# -------------------------------------------
+
+path = "./"  # all CSVs are in repo root folder
+
+all_parts = glob.glob(path + "india_part_*.csv")
+
+if len(all_parts) == 0:
+    raise FileNotFoundError("❌ No dataset found! Upload india_part_1.csv, part_2 ... first.")
+
+df = pd.concat([pd.read_csv(f) for f in all_parts], ignore_index=True)
+
+print("Dataset Loaded:", df.shape)
+
+
 # -----------------------------
 # LOGIN SYSTEM
 # -----------------------------
