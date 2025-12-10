@@ -102,7 +102,7 @@ if not st.session_state.logged_in:
     st.stop()
 
 # Load your dataset
-df = pd.read_csv("india_housing_prices.csv")
+#df = pd.read_csv("india_housing_prices.csv")
 
 # Sidebar Menu
 st.sidebar.title("🏠 Menu")
