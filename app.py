@@ -22,6 +22,10 @@ print("Dataset Loaded:", df.shape)
 
 
 
+
+st.session_state.logged_in = True
+
+
 # -----------------------------
 # FAVORITES SYSTEM
 # -----------------------------
